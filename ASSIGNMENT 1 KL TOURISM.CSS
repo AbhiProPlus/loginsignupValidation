@@ -1,0 +1,38 @@
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    word-spacing: .5cm;
+    color:bisque;
+    box-shadow: inset;
+    background-color:transparent;
+    color: rgb(30, 238, 58);
+}
+ body { 
+     background-image: url(nature-6787476_960_720.webp );  
+    /* background-repeat: no-repeat;  */
+      /* background-size: cover;  */
+    
+}
+h2{
+    word-spacing: .5cm;
+    letter-spacing: .1cm;
+    text-align: center;
+    background:transparent;
+    color: bisque;
+}
+
+h4{
+    size: 100px;
+}
+
+/* style the navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

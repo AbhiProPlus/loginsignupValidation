@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up page</title>
+    <link rel="stylesheet" href="css/images/ASSIGNMENT 1 KL TOURISM.CSS">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/js/bootstrap.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+</head>
+
+<body style="background-image: url(FOREST.jpg); background-size: cover; ">
+
+    
+  <div>  <h1 style="padding-top: .2cm; padding-left: 1cm; font-family: Georgia, 'Times New Roman', Times, serif; color: aliceblue;">KERALA   TOURISM  : welcome to god's own country 
+      
+  </h1> </div> 
+
+<div>  
+
+   <!-- navbar bootstrap -->
+   <div class="navbar" style= background: transparent; ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="index.html">Home </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Districts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">What to explore & Where to go.</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Activities</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="signup.html">Sign up.</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Contact Us</a>
+              </li>
+             
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+      </nav>
+       <!-- navbar end -->
+
+
+</div>
+
+
+
+           <div>
+
+            <div style="padding-left: 4cm; padding-top:3cm ; color: aliceblue;">    <h1>SignUp</h1>      </div>
+    
+
+    
+            <div id="signup" style="padding-left: 13cm; padding-right: 13cm; size: 3px;" >
+        
+            <form action="login.html" name="signup" method="post" onsubmit="return validate()">
+        
+                <form>
+
+
+
+                  <div class="mb-3" style="color: rgb(255, 255, 255); font-size: larger;">
+                    <label for="Full Name" class="form-label">FULL NAME</label>
+                    <input type="text"  class="form-control" id="fullname"  placeholder="Full Name">
+                    
+                  </div>
+
+                  <div class="mb-3" style="color: rgb(255, 255, 255); font-size: larger;">
+                    <label for="username" class="form-label">USER NAME</label>
+                    <input type="text"  class="form-control" id="Username"  placeholder="Username">
+                    
+                  </div>
+
+        
+                    <div class="mb-3" style="color: rgb(255, 255, 255); font-size: larger;">
+                      <label for="exampleInputEmail1" class="form-label">EMAIL ID</label>
+                      <input type="email"  class="form-control" id="Email" aria-describedby="emailHelp" placeholder="email id">
+                      <div style="color: aliceblue;" id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+
+                    <div class="mb-3" style="color: rgb(255, 255, 255); font-size: larger;">
+                      <label for="phonenumber" class="form-label">PHONE NUMBER</label>
+                      <input type="number"  class="form-control" id="phonenumber"  placeholder="phonenumber">
+                      
+                    </div>
+        
+        
+                    <div class="mb-3" style="color: rgb(255, 255, 255); font-size: larger;">
+                      <label for="exampleInputPassword1" class="form-label">PASSWORD</label> <br>
+                      <!-- <input type="password"  class="form-control" id="Password" placeholder="password"> -->
+                      <input type="password" id="Password" onkeyup="CheckPasswordStrength(this.value)" />
+<span id="password_strength"></span>
+<script type="text/javascript">
+    function CheckPasswordStrength(password) {
+        var password_strength = document.getElementById("password_strength");
+ 
+        //TextBox left blank.
+        if (password.length == 0) {
+            password_strength.innerHTML = "";
+            return;
+        }
+ 
+        //Regular Expressions.
+        var regex = new Array();
+        regex.push("[A-Z]"); //Uppercase Alphabet.
+        regex.push("[a-z]"); //Lowercase Alphabet.
+        regex.push("[0-9]"); //Digit.
+        regex.push("[$@$!%*#?&]"); //Special Character.
+ 
+        var passed = 0;
+ 
+        //Validate for each Regular Expression.
+        for (var i = 0; i < regex.length; i++) {
+            if (new RegExp(regex[i]).test(password)) {
+                passed++;
+            }
+        }
+ 
+        //Validate for length of Password.
+        if (passed > 2 && password.length > 8) {
+            passed++;
+        }
+ 
+        //Display status.
+        var color = "";
+        var strength = "";
+        switch (passed) {
+            case 0:
+            case 1:
+                strength = "Weak";
+                color = "red";
+                break;
+            case 2:
+                strength = "Good";
+                color = "darkorange";
+                break;
+            case 3:
+            case 4:
+                strength = "Strong";
+                color = "green";
+                break;
+            case 5:
+                strength = "Very Strong";
+                color = "darkgreen";
+                break;
+        }
+        password_strength.innerHTML = strength;
+        password_strength.style.color = color;
+    }
+</script>
+                     
+                     
+                    
+                    
+
+                    </div>
+
+                    <div class="mb-3" style="color: rgb(255, 255, 255); font-size: larger;">
+                      <label for="exampleInputPassword1" class="form-label">CONFIRM PASSWORD</label>
+                      <input type="password"  class="form-control" id="confirmPassword" placeholder="Confirm password">
+                    </div>
+        
+        
+        
+                   
+        
+        
+                    <button type="submit" value="SignUp" class="btn btn-primary">SignUp</button>
+                    <h1 style="padding: 1cm; font-size: x-small;color: beige;">By signing up, you agree to our Terms , Data Policy and Cookies Policy .</h1>
+        
+                  </form>
+        
+        </div>
+
+           </div>
+
+
+
+           <div>
+
+            
+            <h2 style="color: rgb(240, 219, 219); ">   <a href="login.html" style="padding-left: 5cm;color: rgb(238, 248, 236);">Have an account? Log in</a></h2>
+
+           </div>
+
+           <br>
+           
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+
+
+
+           <SCript>
+function validate(){
+  var fullname = document.getElementById("fullname");
+  var Username = document.getElementById("Username");
+  var Email = document.getElementById("Email");
+  var phonenumber = document.getElementById("phonenumber");
+  var Password = document.getElementById("Password");
+  var confirmPassword = document.getElementById("confirmPassword");
+
+
+
+  if(fullname.value==""){
+    alert("please enter your fullname")
+    document.signup.fullname.focus();
+    return false;
+  }
+ if(Username.value==""){
+    alert("please enter your Username")
+    document.signup.Username.focus();
+    return false;
+}
+if(Email.value==""){
+    alert("please enter your Email")
+    document.signup.Email.focus();
+    return false;
+}
+if(phonenumber.value==""){
+    alert("please enter your phonenumber")
+    document.signup.phonenumber.focus();
+    return false;
+}
+if(phonenumber.value.length<10){
+  alert("phonenumber should be of minimum 10 digits");
+  document.signup.phonenumber.focus();
+  return false;
+}
+
+if(Password.value==""){
+    alert("please enter your Password")
+    document.signup.Password.focus();
+    return false;
+}
+if(Password.value.length<8){
+    alert("Password should contain minimum 8 characters");
+    document.signup.Password.focus();
+    return false;
+}
+// if(Password.test(value)("/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/"));{
+//     alert("Password should contain a uppercase letter , a lowercase letter , a special character and a number");
+//     document.signup.Password.focus();
+//     return false;
+// }
+if(confirmPassword.value==""){
+    alert("please confirm your Password")
+    document.signup.confirmPassword.focus();
+    return false;
+}
+if(confirmPassword.value==""||confirmPassword.value!=Password.value){
+    alert(" Password not matching")
+    document.signup.confirmPassword.focus();
+    return false;
+}
+return true;
+
+
+}
+
+// function validate() {
+//     var password = document.getElementById('Password').value,
+//         errors = [];
+//     if (password.length < 8) {
+//         errors.push("Your password must be at least 8 characters"); 
+//     }
+//     if (password.search(/[a-z]/i) < 0) {
+//         errors.push("Your password must contain at least one lower case letter.");
+//     }
+//     if (password.search(/[0-9]/) < 0) {
+//         errors.push("Your password must contain at least one digit."); 
+//     }
+//     if (password.search(/[A-Z]/) < 0) {
+//     errors.push("Your password must contain at least one upper case letter."); 
+//     }
+//     if (password.search(/[!@#$%^&*]/i) < 0) {
+//     errors.push("Your password must contain at least one special character."); 
+//     }
+//     if (errors.length > 0) {
+//         alert(errors.join("\n"));
+//         return false;
+//     }
+//     return true;
+// }
+
+           </SCript>
+
+<!--            
+           <script src="signup.js"></script> -->
+
+</body>
+
+</html>
